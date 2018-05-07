@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
     private final String ARTIKL_FRAGMENT = "Artikl";
     private final String RACUN_FRAGMENT = "Racuna";
 
-    Toolbar mainToolbar;
+
 
 
 
@@ -23,8 +23,14 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        Toolbar mainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
+        setActionBar(mainToolbar);
         this.setUpFragments();
+    }
+
+    //drugačije ne radi ???
+    private void setActionBar(Toolbar mainToolbar) {
+        mainToolbar = mainToolbar;
     }
 
 
