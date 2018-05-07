@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bgRacunFragment">
+    <TextView
+        android:id="@+id/tvNaziv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvNazivText" />
+
+    <TextView
+        android:id="@+id/tvKolicina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/tvUkupno"
+        android:text="@string/tvKolicinaText" />
+
+    <TextView
+        android:id="@+id/tvCijena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="112dp"
+        android:text="@string/tvCijenaText" />
+
+    <TextView
+        android:id="@+id/tvIznos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-50dp"
+        android:layout_toEndOf="@+id/btnSpremi"
+        android:text="@string/tvIznosText" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvRacun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="38dp"></android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/tvUkupno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="82dp"
+        android:text="@string/tvUkupnoText" />
+
+    <Button
+        android:id="@+id/btnSpremi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:text="@string/btnSpremiText" />
+
+    <Button
+        android:id="@+id/btnOdustani"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tvKolicina"
+        android:layout_alignParentBottom="true"
+        android:text="@string/btnOdustaniText" />
+
+    <TextView
+        android:id="@+id/tvUkupnoCijena"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/tvUkupno"
+        android:layout_marginEnd="122dp" />
+
+</RelativeLayout>
