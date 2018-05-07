@@ -4,13 +4,19 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <EditText
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+    </android.support.v7.widget.Toolbar>
+    <FrameLayout
         android:id="@+id/flKategorije"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.9"
         android:background="#C0C0C0">
-    </EditText>
+    </FrameLayout>
     <FrameLayout
         android:id="@+id/flArtikli"
         android:layout_width="match_parent"
