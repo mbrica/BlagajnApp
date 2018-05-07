@@ -3,8 +3,8 @@ package com.example.marko.blagajnapp;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,11 +15,15 @@ public class MainActivity extends Activity {
     private final String ARTIKL_FRAGMENT = "Artikl";
     private final String RACUN_FRAGMENT = "Racuna";
 
+    Toolbar mainToolbar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         this.setUpFragments();
     }
 
