@@ -16,15 +16,13 @@ public class MainActivity extends Activity {
     private final String RACUN_FRAGMENT = "Racuna";
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar mainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setActionBar(mainToolbar);
+        mainToolbar.showOverflowMenu();
         this.setUpFragments();
     }
 
@@ -32,6 +30,7 @@ public class MainActivity extends Activity {
     private void setActionBar(Toolbar mainToolbar) {
         mainToolbar = mainToolbar;
     }
+
 
 
     //Postavljanje fragmenata na sučelje
@@ -44,6 +43,8 @@ public class MainActivity extends Activity {
         fragmentTransaction.commit();
     }
 
+    
+
     //Metode za menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -51,6 +52,12 @@ public class MainActivity extends Activity {
         menuInflater.inflate(R.menu.main_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
+
     //Pogledati valja li ovako ?
     @Override
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
