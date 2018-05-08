@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends Activity {
 
@@ -15,16 +16,17 @@ public class MainActivity extends Activity {
     private final String ARTIKL_FRAGMENT = "Artikl";
     private final String RACUN_FRAGMENT = "Racun";
 
-    Toolbar toolbar;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.showOverflowMenu();
+        setSupportActionBar(toolbar);
         this.setUpFragments();
     }
+
 
 
     //Postavljanje fragmenata na sučelje
@@ -46,6 +48,7 @@ public class MainActivity extends Activity {
         menuInflater.inflate(R.menu.main_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
