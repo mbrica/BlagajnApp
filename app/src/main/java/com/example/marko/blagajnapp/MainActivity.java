@@ -10,7 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.support.v7.app.AppCompatActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     private final String KATEGORIJA_FRAGMENT = "Kategorija";
     private final String ARTIKL_FRAGMENT = "Artikl";
@@ -52,12 +52,6 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
-
-    //Pogledati valja li ovako ?
-    @Override
-    public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (item.getItemId()){
             case R.id.menuItemLogout:
                 this.logout();
@@ -65,6 +59,7 @@ public class MainActivity extends Activity {
         }
         return false;
     }
+
 
     //na developers.android piše da mora biti public
     public void logout(){
