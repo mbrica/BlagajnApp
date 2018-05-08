@@ -4,5 +4,4 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:title="@string/app_name">
-
 </android.support.v7.widget.Toolbar>

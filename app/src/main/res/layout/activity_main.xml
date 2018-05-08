@@ -6,8 +6,9 @@
     android:layout_height="match_parent">
 
     <include
-        layout="@layout/main_toolbar"
-        android:id="@+id/main_toolbar"/>
+        layout="@layout/toolbar"
+        android:id="@+id/toolbar">
+    </include>
 
     <FrameLayout
         android:id="@+id/flKategorije"

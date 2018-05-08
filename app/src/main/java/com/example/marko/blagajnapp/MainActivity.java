@@ -13,24 +13,18 @@ public class MainActivity extends Activity {
 
     private final String KATEGORIJA_FRAGMENT = "Kategorija";
     private final String ARTIKL_FRAGMENT = "Artikl";
-    private final String RACUN_FRAGMENT = "Racuna";
+    private final String RACUN_FRAGMENT = "Racun";
 
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar mainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        setActionBar(mainToolbar);
-        mainToolbar.showOverflowMenu();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.showOverflowMenu();
         this.setUpFragments();
     }
-
-    //drugačije ne radi ???
-    private void setActionBar(Toolbar mainToolbar) {
-        mainToolbar = mainToolbar;
-    }
-
 
 
     //Postavljanje fragmenata na sučelje
@@ -43,12 +37,12 @@ public class MainActivity extends Activity {
         fragmentTransaction.commit();
     }
 
-    
+
 
     //Metode za menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = this.getMenuInflater();
+        MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.main_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
