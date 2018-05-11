@@ -19,9 +19,8 @@ public class KategorijaAdapter extends RecyclerView.Adapter<KategorijaAdapter.Ka
         this.refreshData(kategorije);
     }
 
-    @NonNull
     @Override
-    public KategorijaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public KategorijaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_kategorija,parent,false);
         return new KategorijaViewHolder(view);
     }

@@ -63,7 +63,5 @@ public class NoviDjelatnikActivity extends AppCompatActivity implements View.OnC
         return false;
     }
 
-    //implementirati metodu za menu(admin)
-
     //implementirati metodu dodajDjelatnika();
 }

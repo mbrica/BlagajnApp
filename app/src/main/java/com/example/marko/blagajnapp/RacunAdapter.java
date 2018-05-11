@@ -1,6 +1,4 @@
 package com.example.marko.blagajnapp;
-
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,9 +18,8 @@ public class RacunAdapter extends RecyclerView.Adapter<RacunAdapter.RacunViewHol
         mRacun = new ArrayList<>(); // provjeriti ovo
     }
 
-    @NonNull
     @Override
-    public RacunViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RacunViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_racun,parent,false);
         return new RacunViewHolder(view);
     }

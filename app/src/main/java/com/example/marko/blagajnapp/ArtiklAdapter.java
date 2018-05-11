@@ -1,11 +1,8 @@
 package com.example.marko.blagajnapp;
-
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 
 import java.util.List;
@@ -19,9 +16,8 @@ public class ArtiklAdapter extends RecyclerView.Adapter<ArtiklAdapter.ArtiklView
         this.refreshData(artikli);
     }
 
-    @NonNull
     @Override
-    public ArtiklViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ArtiklViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_artikl,parent,false);
         return new ArtiklViewHolder(view);
     }
