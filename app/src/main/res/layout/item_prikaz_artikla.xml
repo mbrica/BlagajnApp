@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvIdArtikla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"/>
+
+    <TextView
+        android:id="@+id/tvNazivArtikla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvIdArtikla"
+        android:text="Kava" />
+
+    <TextView
+        android:id="@+id/tvCijenaArtikla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNazivArtikla"
+        android:text="7,00" />
+
+    <TextView
+        android:id="@+id/tvKategorijaArtikla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvCijenaArtikla"
+        android:text="Topli napitci"/>
+
+</RelativeLayout>

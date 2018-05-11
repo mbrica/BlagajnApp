@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/toolbar"/>
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/toolbar"
+        android:hint="Korisničko ime" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@+id/etUsername"
+        android:hint="Lozinka"/>
+    <EditText
+        android:id="@+id/etImeDjelatnika"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@+id/etPassword"
+        android:hint="Ime djelatnika"/>
+    <EditText
+        android:id="@+id/etPrezimeDjelatnika"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_below="@+id/etImeDjelatnika"
+        android:hint="Prezime djelatnika"/>
+    <EditText
+        android:id="@+id/etOIB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/etPrezimeDjelatnika"
+        android:hint="OIB djelatnika"/>
+    <Button
+        android:id="@+id/btnDodajDjelatnika"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etOIB"
+        android:text="Dodaj djelatnika"/>
+
+</RelativeLayout>

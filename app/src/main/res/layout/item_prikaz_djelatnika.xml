@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvIdDjelaznika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"/>
+
+    <TextView
+        android:id="@+id/tvImeDjelatnika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvIdDjelaznika"
+        android:text="Pero"/>
+
+    <TextView
+        android:id="@+id/tvPrezimeDjelatnika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvImeDjelatnika"
+        android:text="Perić"/>
+
+    <TextView
+        android:id="@+id/tvOIBDjelatnika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPrezimeDjelatnika"
+        android:text="12345678901"/>
+
+    <TextView
+        android:id="@+id/tvUsernameDjelatnika"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvOIBDjelatnika"
+        android:text="pperic"/>
+
+</RelativeLayout>

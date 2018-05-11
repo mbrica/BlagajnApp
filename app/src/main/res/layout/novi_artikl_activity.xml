@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/toolbar"/>
+
+    <EditText
+        android:id="@+id/etNazivArtikla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/toolbar"
+        android:hint="Naziv artikla" />
+    <EditText
+        android:id="@+id/etCijenaArtikla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/etNazivArtikla"
+        android:hint="Cijena artikla" />
+
+    <Spinner
+        android:id="@+id/spinKategorija"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etCijenaArtikla">
+    </Spinner>
+
+    <Button
+        android:id="@+id/btnDodajArtikl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinKategorija"
+        android:text="Dodaj artikl"/>
+
+</RelativeLayout>
