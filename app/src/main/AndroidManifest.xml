@@ -21,6 +21,10 @@
         </activity>
 
         <activity android:name=".LoginActivity" />
+        <activity android:name=".AdminActivity"/>
+        <activity android:name=".NoviDjelatnikActivity" />
+        <activity android:name=".NovaKategorijaActivity"/>
+        <activity android:name=".NoviArtiklActivity"/>
     </application>
 
 </manifest>
