@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tvIdDjelaznika"
+        android:id="@+id/tvIdDjelatnika"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1"/>

@@ -1,14 +1,19 @@
 package com.example.marko.blagajnapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class TabDjelatnici extends Fragment {
 
@@ -17,13 +22,25 @@ public class TabDjelatnici extends Fragment {
     private TextView tvdjelatnici;
     private FloatingActionButton fabNoviDjelatnik;
     private RecyclerView rvPrikazDjelatnika;
+    private PrikazDjelatnikaAdapter mPrikazDjelatnikaAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerView.ItemDecoration mItemDecoration;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab_djelatnici,container,false);
         TextView tvdjelatnicii = (TextView) view.findViewById(R.id.tvdjelatnici);
 
-        //dodati RecyclerView
+
+        Context context = getActivity();
+        rvPrikazDjelatnika = (RecyclerView) view.findViewById(R.id.rvPopisDjelatnika);
+        mPrikazDjelatnikaAdapter = new PrikazDjelatnikaAdapter(new ArrayList<Djelatnik>());
+        mLayoutManager = new LinearLayoutManager(context);
+        mItemDecoration = new DividerItemDecoration(context,DividerItemDecoration.VERTICAL);
+
+        rvPrikazDjelatnika.addItemDecoration(mItemDecoration);
+        rvPrikazDjelatnika.setLayoutManager(mLayoutManager);
+        rvPrikazDjelatnika.setAdapter(mPrikazDjelatnikaAdapter);
 
         FloatingActionButton fabNoviDjelatnik = (FloatingActionButton) view.findViewById(R.id.fabNoviDjelatnik);
         fabNoviDjelatnik.setOnClickListener(new View.OnClickListener() {
