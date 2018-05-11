@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class PrikazRacunaAdapter extends RecyclerView.Adapter<PrikazRacunaAdapte
     @Override
     public PrikazRacunaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_prikaz_racuna,parent,false);
-        return new PrikazRacunaAdapter(view);
+        return new PrikazRacunaViewHolder(view);
     }
 
     @Override
@@ -34,7 +35,12 @@ public class PrikazRacunaAdapter extends RecyclerView.Adapter<PrikazRacunaAdapte
 
     public static class PrikazRacunaViewHolder extends RecyclerView.ViewHolder{
 
-        //dodati konstruktor
+        public TextView tvRacun;
+
+        public PrikazRacunaViewHolder(View itemView){
+            super(itemView);
+            this.tvRacun = (TextView) itemView.findViewById(R.id.tvRacun);
+        }
 
     }
 }
