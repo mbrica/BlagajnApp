@@ -12,4 +12,6 @@
     <string name="BtnLogin">Prijava</string>
     <string name="MenuItemTitle">Odjava</string>
     <string name="title_activity_admin">AdminActivity</string>
+    <string name="MenuUrediTitle">Uredi</string>
+    <string name="MenuBrisiTitle">Obriši</string>
 </resources>
