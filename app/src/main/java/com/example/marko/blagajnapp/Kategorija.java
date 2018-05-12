@@ -18,8 +18,8 @@ public class Kategorija {
     //Prazan konstruktor, bez njega ne radi
     public Kategorija (){}
 
-    public Kategorija (int kategorijaId, String nazivKategorije){
-        mkategorijaId = kategorijaId;
+    public Kategorija ( String nazivKategorije){
+        //mkategorijaId = kategorijaId;
         mNazivKategorije = nazivKategorije;
     }
 

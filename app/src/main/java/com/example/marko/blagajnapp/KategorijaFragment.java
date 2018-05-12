@@ -1,8 +1,12 @@
 package com.example.marko.blagajnapp;
 
 import android.app.Fragment;
+import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,8 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class KategorijaFragment extends Fragment {
+
 
     RecyclerView rvKategorije;
     KategorijaAdapter mKategorijaAdapter;
@@ -31,6 +37,7 @@ public class KategorijaFragment extends Fragment {
 
         this.rvKategorije.setLayoutManager(this.mLayoutManager);
         this.rvKategorije.setAdapter(this.mKategorijaAdapter);
+
     }
 
     @Override
