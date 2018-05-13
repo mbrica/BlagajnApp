@@ -25,11 +25,11 @@ public class Djelatnik {
     private String mPrezimeDjelatnika;
 
     @ColumnInfo(name = "OIB")
-    private char mOIB;
+    public String mOIB;
 
     public Djelatnik(){}
 
-    public Djelatnik(int djelatnikId, String username, String password, String imeDjelatnika, String prezimeDjelatnika, char OIB){
+    public Djelatnik(int djelatnikId, String username, String password, String imeDjelatnika, String prezimeDjelatnika, String OIB){
         mDjelatnikId = djelatnikId;
         mUsernme = username;
         mPassword = password;
@@ -54,11 +54,11 @@ public class Djelatnik {
         mUsernme = username;
     }
 
-    public String getmPassword(){
+    public String getPassword(){
         return mPassword;
     }
 
-    public void setmPassword(String password){
+    public void setPassword(String password){
         mPassword = password;
     }
 
@@ -78,11 +78,11 @@ public class Djelatnik {
         mPrezimeDjelatnika = prezimeDjelatnika;
     }
 
-    public char getOIB(){
+    public String getOIB(){
         return mOIB;
     }
 
-    public void setOIB(char OIB){
+    public void  setOIB(String OIB){
         mOIB = OIB;
     }
 

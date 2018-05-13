@@ -21,6 +21,7 @@ public class NoviDjelatnikActivity extends AppCompatActivity implements View.OnC
     private EditText etOIBDjelatnika;
     private Button btnDodajDjelatnika;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class NoviDjelatnikActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         //razraditi logiku za spremanje djelatnika u bazu
+
     }
 
     //sljedeće dvije metode su potrebne za prikaz i funkcioniranje menua
@@ -62,6 +64,4 @@ public class NoviDjelatnikActivity extends AppCompatActivity implements View.OnC
         }
         return false;
     }
-
-    //implementirati metodu dodajDjelatnika();
 }

@@ -1,14 +1,13 @@
 package com.example.marko.blagajnapp;
 
 import android.app.Application;
-import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
-import android.os.AsyncTask;
-import android.support.annotation.NonNull;
 
-@Database(entities = {Kategorija.class, Artikl.class, Djelatnik.class, Racun.class}, version = 1)
+
+
+@Database(entities = {Kategorija.class, Artikl.class, Djelatnik.class, Racun.class, StavkeRacuna.class}, version = 1)
 public abstract class BlagajnAppDatabase extends RoomDatabase {
 
     public abstract KategorijaDao kategorijaDao();
