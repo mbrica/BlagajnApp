@@ -12,14 +12,14 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:screenOrientation="portrait">
         </activity>
 
-        <activity android:name=".LoginActivity"
+        <activity android:name=".ui.LoginActivity"
                   android:screenOrientation="portrait" />
 
-        <activity android:name=".AdminActivity"
+        <activity android:name=".ui.AdminActivity"
                   android:screenOrientation="portrait" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -27,13 +27,13 @@
         </intent-filter>
         </activity>
 
-        <activity android:name=".NoviDjelatnikActivity"
+        <activity android:name=".ui.NoviDjelatnikActivity"
                   android:screenOrientation="portrait" />
 
-        <activity android:name=".NovaKategorijaActivity"
+        <activity android:name=".ui.NovaKategorijaActivity"
                   android:screenOrientation="portrait" />
 
-        <activity android:name=".NoviArtiklActivity"
+        <activity android:name=".ui.NoviArtiklActivity"
                   android:screenOrientation="portrait" />
 
     </application>
