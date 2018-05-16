@@ -31,12 +31,9 @@ public class StavkeRacuna {
     @ColumnInfo(name = "Iznos")
     private float mIznos;
 
-    @ColumnInfo(name = "UkupniIznos")
-    private float mUkupniIznos;
-
     public StavkeRacuna(){}
 
-    public StavkeRacuna(int StavkeRacunaID, int IdRacuna, int artikl, String NazivArtikla, int Kolicina, float CijenaArtikla, float Iznos, float UkupniIznos){
+    public StavkeRacuna(int StavkeRacunaID, int IdRacuna, int artikl, String NazivArtikla, int Kolicina, float CijenaArtikla, float Iznos){
         mStavkaRacunaID = StavkeRacunaID;
         mIdRacuna = IdRacuna;
         mArtikl = artikl;
@@ -44,7 +41,6 @@ public class StavkeRacuna {
         mKolicina = Kolicina;
         mCijenaArtikla = CijenaArtikla;
         mIznos = Iznos;
-        mUkupniIznos = UkupniIznos;
     }
 
     public int getStavkaRacunaID() {
@@ -101,13 +97,5 @@ public class StavkeRacuna {
 
     public void setIznos(float Iznos) {
         this.mIznos = Iznos;
-    }
-
-    public float getUkupniIznos() {
-        return mUkupniIznos;
-    }
-
-    public void setUkupniIznos(float UkupniIznos) {
-        this.mUkupniIznos = UkupniIznos;
     }
 }
