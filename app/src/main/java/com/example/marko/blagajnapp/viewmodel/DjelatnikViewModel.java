@@ -20,6 +20,10 @@ public class DjelatnikViewModel extends ViewModel {
         return mDjelatnikRepository.getAllDjelatnik();
     }
 
+    public Djelatnik getDjelatnik(String username, String password){
+        return mDjelatnikRepository.getDjelatnik(username,password).getValue();
+    }
+
     public void insertDjelatnik(Djelatnik djelatnik){
         mDjelatnikRepository.insertDjelatnik(djelatnik);
     }

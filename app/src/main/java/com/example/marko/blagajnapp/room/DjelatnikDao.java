@@ -25,4 +25,7 @@ public interface DjelatnikDao {
 
     @Query("SELECT * FROM Djelatnik ORDER BY djelatnikId ASC")
     LiveData<List<Djelatnik>> getAllDjelatnik();
+
+    @Query("SELECT * FROM Djelatnik WHERE username = :username AND password = :password")
+    LiveData<Djelatnik> getDjelatnik(String username, String password);
 }

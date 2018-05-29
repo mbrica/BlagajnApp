@@ -2,10 +2,13 @@ package com.example.marko.blagajnapp.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class Djelatnik {
+    public static final int djelatnik = 0;
+    public static final int admin = 1;
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "djelatnikId")
@@ -16,7 +19,7 @@ public class Djelatnik {
 
     //neka enkripcija za password
     @ColumnInfo(name = "password")
-    public String mPassword;
+    private String mPassword;
 
     @ColumnInfo(name = "imeDjelatnika")
     private String mImeDjelatnika;
@@ -25,65 +28,84 @@ public class Djelatnik {
     private String mPrezimeDjelatnika;
 
     @ColumnInfo(name = "OIB")
-    public String mOIB;
+    private String mOIB;
 
-    public Djelatnik(){}
+    @ColumnInfo(name = "vrstaDjelatnika")
+    private int mVrstaDjelatnika;
 
-    public Djelatnik(int djelatnikId, String username, String password, String imeDjelatnika, String prezimeDjelatnika, String OIB){
-        mDjelatnikId = djelatnikId;
-        mUsernme = username;
-        mPassword = password;
-        mImeDjelatnika = imeDjelatnika;
-        mPrezimeDjelatnika = prezimeDjelatnika;
-        mOIB = OIB;
+    public Djelatnik (){}
+
+    public Djelatnik(int mDjelatnikId, String mUsername, String mPassword, String mImeDjelatnika, String mPrezimeDjelatnika, String mOIB, int mVrstaDjelatnika){
+        this.mDjelatnikId = mDjelatnikId;
+        this.mUsernme = mUsername;
+        this.mPassword = mPassword;
+        this.mImeDjelatnika = mImeDjelatnika;
+        this.mPrezimeDjelatnika = mPrezimeDjelatnika;
+        this.mOIB = mOIB;
+        this.mVrstaDjelatnika = mVrstaDjelatnika;
+    }
+
+    @Ignore
+    public Djelatnik(String mUsernme, String mPassword, int mVrstaDjelatnika){
+        this.mUsernme = mUsernme;
+        this.mPassword = mPassword;
+        this.mVrstaDjelatnika = mVrstaDjelatnika;
     }
 
     public int getDjelatnikId(){
         return mDjelatnikId;
     }
 
-    public void setDjelatnikId(int djelatnikId){
-        mDjelatnikId = djelatnikId;
+    public void setDjelatnikId(int mDjelatnikId){
+        this.mDjelatnikId = mDjelatnikId;
     }
 
     public String getUsername(){
         return mUsernme;
     }
 
-    public void setUsername(String username){
-        mUsernme = username;
+    public void setUsername(String mUsername){
+        this.mUsernme = mUsername;
     }
 
     public String getPassword(){
         return mPassword;
     }
 
-    public void setPassword(String password){
-        mPassword = password;
+    public void setPassword(String mPassword){
+        this.mPassword = mPassword;
     }
 
     public String getImeDjelatnika(){
         return mImeDjelatnika;
     }
 
-    public void setImeDjelatnika(String imeDjelatnika){
-        mImeDjelatnika = imeDjelatnika;
+    public void setImeDjelatnika(String mImeDjelatnika){
+        this.mImeDjelatnika = mImeDjelatnika;
     }
 
     public String getPrezimeDjelatnika(){
         return mPrezimeDjelatnika;
     }
 
-    public void setPrezimeDjelatnika(String prezimeDjelatnika){
-        mPrezimeDjelatnika = prezimeDjelatnika;
+    public void setPrezimeDjelatnika(String mPrezimeDjelatnika){
+        this.mPrezimeDjelatnika = mPrezimeDjelatnika;
     }
 
     public String getOIB(){
         return mOIB;
     }
 
-    public void  setOIB(String OIB){
-        mOIB = OIB;
+    public void  setOIB(String mOIB){
+        this.mOIB = mOIB;
+    }
+
+    public int getVrstaDjelatnika(){
+        return mVrstaDjelatnika;
+    }
+
+    public void setVrstaDjelatnika(int mVrstaDjelatnika){
+        this.mVrstaDjelatnika = mVrstaDjelatnika;
     }
 
     @Override

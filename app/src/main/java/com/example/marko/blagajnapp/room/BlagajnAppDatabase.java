@@ -1,19 +1,22 @@
 package com.example.marko.blagajnapp.room;
 
 import android.app.Application;
+import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.support.annotation.NonNull;
 
-import com.example.marko.blagajnapp.model.Admin;
 import com.example.marko.blagajnapp.model.Artikl;
 import com.example.marko.blagajnapp.model.Djelatnik;
 import com.example.marko.blagajnapp.model.Kategorija;
 import com.example.marko.blagajnapp.model.Racun;
 import com.example.marko.blagajnapp.model.StavkeRacuna;
 
+import java.util.concurrent.Executors;
 
-@Database(entities = {Kategorija.class, Artikl.class, Djelatnik.class, Racun.class, StavkeRacuna.class, Admin.class}, version = 1)
+
+@Database(entities = {Kategorija.class, Artikl.class, Djelatnik.class, Racun.class, StavkeRacuna.class}, version = 1)
 public abstract class BlagajnAppDatabase extends RoomDatabase {
 
     public abstract KategorijaDao kategorijaDao();
@@ -21,17 +24,25 @@ public abstract class BlagajnAppDatabase extends RoomDatabase {
     public abstract DjelatnikDao djelatnikDao();
     public abstract RacunDao racunDao();
     public abstract StavkeRacunaDao stavkeRacunaDao();
-    public abstract AdminDao adminDao();
 
     private static BlagajnAppDatabase INSTANCE;
     private static final String DATABASE_NAME = "blagajnapp.db";
 
     public static BlagajnAppDatabase getInstance(Application application){
         if (INSTANCE == null){
-            INSTANCE = Room.databaseBuilder(application.getApplicationContext(),BlagajnAppDatabase.class,DATABASE_NAME).build();
+            INSTANCE = Room.databaseBuilder(application.getApplicationContext(),BlagajnAppDatabase.class,DATABASE_NAME).addCallback(new Callback() {
+                @Override
+                public void onCreate(@NonNull SupportSQLiteDatabase db) {
+                    super.onCreate(db);
+                    Executors.newSingleThreadExecutor().execute(new Runnable() {
+                        @Override
+                        public void run() {
+                            INSTANCE.djelatnikDao().insertDjelatnik(new Djelatnik("m","m",Djelatnik.admin));
+                        }
+                    });
+                }
+            }).build();
         }
         return INSTANCE;
     }
-
-    //Hardkodirati admina, koristiti klasu koja extenda AsyncTask
 }

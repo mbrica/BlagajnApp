@@ -23,7 +23,6 @@ public interface ArtiklDao {
     @Update
     void updateArtikl (Artikl artikl);
 
-    //Prepraviti ovaj query
-    @Query("SELECT * FROM Artikl WHERE Kategorija = Kategorija ORDER BY artiklId ASC;")
-    LiveData<List<Artikl>> getArtikliIzKategorije();
+    @Query("SELECT * FROM Artikl WHERE Kategorija = :Kategorija ORDER BY artiklId ASC;")
+    LiveData<List<Artikl>> getArtikliIzKategorije(int Kategorija);
 }

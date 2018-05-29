@@ -9,27 +9,24 @@ public class Kategorija {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "kategorijaId")
-    //ne radi(ne pronalazi getter) kada je ova varijabla private ???
     public int mkategorijaId;
 
     @ColumnInfo(name = "nazivKategorije")
     private String mNazivKategorije;
 
-    //Prazan konstruktor, bez njega ne radi
     public Kategorija (){}
 
     public Kategorija ( String nazivKategorije){
-        //mkategorijaId = kategorijaId;
         mNazivKategorije = nazivKategorije;
     }
 
 
-    public int getKategorijaId(){
+    public int getMKategorijaId(){
         return mkategorijaId;
     }
 
-    public void setKategorijaId(int kategorijaId){
-        mkategorijaId = kategorijaId;
+    public void setMKategorijaId(int kategorijaId){
+        this.mkategorijaId = kategorijaId;
     }
 
     public String getNazivKategorije(){

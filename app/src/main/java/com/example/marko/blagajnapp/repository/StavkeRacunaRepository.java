@@ -20,7 +20,7 @@ public class StavkeRacunaRepository {
 
     private StavkeRacunaRepository(Application application){
         mDatabase = BlagajnAppDatabase.getInstance(application);
-        mData = mDatabase.stavkeRacunaDao().getAllStavkeRacuna();
+        //mData = mDatabase.stavkeRacunaDao().getAllStavkeRacuna();
     }
 
     public static StavkeRacunaRepository getINSTANCE(){

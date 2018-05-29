@@ -3,7 +3,6 @@ package com.example.marko.blagajnapp.repository;
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
-
 import com.example.marko.blagajnapp.BlagajnApp;
 import com.example.marko.blagajnapp.model.Djelatnik;
 import com.example.marko.blagajnapp.room.BlagajnAppDatabase;
@@ -16,11 +15,9 @@ public class DjelatnikRepository {
     private static DjelatnikRepository INSTANCE;
 
     private BlagajnAppDatabase mDatabase;
-    private LiveData<List<Djelatnik>> mData;
 
     private DjelatnikRepository(Application application){
         mDatabase = BlagajnAppDatabase.getInstance(application);
-        mData = mDatabase.djelatnikDao().getAllDjelatnik();
     }
 
     public static DjelatnikRepository getINSTANCE(){
@@ -31,7 +28,11 @@ public class DjelatnikRepository {
     }
 
     public LiveData<List<Djelatnik>> getAllDjelatnik(){
-        return mData;
+        return mDatabase.djelatnikDao().getAllDjelatnik();
+    }
+
+    public LiveData<Djelatnik> getDjelatnik(String username, String password){
+        return mDatabase.djelatnikDao().getDjelatnik(username,password);
     }
 
     public void insertDjelatnik(Djelatnik djelatnik){

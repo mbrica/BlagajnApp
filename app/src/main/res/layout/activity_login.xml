@@ -25,6 +25,5 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_below="@id/etPassword"
-        android:onClick="login"
         android:text="@string/BtnLogin" />
 </RelativeLayout>

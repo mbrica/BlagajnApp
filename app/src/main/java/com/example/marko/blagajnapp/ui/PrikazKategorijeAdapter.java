@@ -27,7 +27,7 @@ public class PrikazKategorijeAdapter extends RecyclerView.Adapter<PrikazKategori
     @Override
     public void onBindViewHolder(PrikazKategorijeViewHolder holder, int position) {
         Kategorija kategorija = this.mKategorije.get(position);
-        holder.tvIdKategorije.setText(kategorija.getKategorijaId());
+        holder.tvIdKategorije.setText(kategorija.getMKategorijaId());
         holder.tvNazivKategorije.setText(kategorija.getNazivKategorije());
     }
 

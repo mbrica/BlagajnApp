@@ -3,7 +3,6 @@ package com.example.marko.blagajnapp.repository;
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
-
 import com.example.marko.blagajnapp.BlagajnApp;
 import com.example.marko.blagajnapp.model.Artikl;
 import com.example.marko.blagajnapp.room.ArtiklDao;
@@ -20,7 +19,7 @@ public class ArtiklRepository {
 
     private ArtiklRepository(Application application){
         mDatabase = BlagajnAppDatabase.getInstance(application);
-        mData = mDatabase.artiklDao().getArtikliIzKategorije();
+        //mData = mDatabase.artiklDao().getArtikliIzKategorije();
     }
 
     public static ArtiklRepository getINSTANCE(){
