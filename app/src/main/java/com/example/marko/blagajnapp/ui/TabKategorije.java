@@ -34,7 +34,7 @@ public class TabKategorije extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab_kategorije,container,false);
-        TextView tvkategorije = (TextView) view.findViewById(R.id.tvdjelatnici);
+        TextView tvkategorije = (TextView) view.findViewById(R.id.tvkategorije);
 
         Context context = getActivity();
         rvPrikazKategorija = (RecyclerView) view.findViewById(R.id.rvPopisKategorija);

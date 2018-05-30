@@ -1,8 +1,9 @@
-package com.example.marko.blagajnapp.ui;
+package com.example.marko.blagajnapp.ui.djelatnici;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.marko.blagajnapp.R;
@@ -13,6 +14,7 @@ import java.util.List;
 public class PrikazDjelatnikaAdapter extends RecyclerView.Adapter<PrikazDjelatnikaAdapter.PrikazDjelatnikaViewHolder> {
 
     private List<Djelatnik> mDjelatnici;
+    private ClickListener clickListener;
 
     public PrikazDjelatnikaAdapter(List<Djelatnik> djelatnici){
         mDjelatnici = djelatnici;
@@ -27,7 +29,7 @@ public class PrikazDjelatnikaAdapter extends RecyclerView.Adapter<PrikazDjelatni
     @Override
     public void onBindViewHolder(PrikazDjelatnikaViewHolder holder, int position) {
         Djelatnik djelatnik = this.mDjelatnici.get(position);
-        holder.tvIdDjelatnika.setText(djelatnik.getDjelatnikId());
+        holder.tvIdDjelatnika.setText(String.valueOf(djelatnik.getDjelatnikId()));
         holder.tvImeDjelatnika.setText(djelatnik.getImeDjelatnika());
         holder.tvPrezimeDjelatnika.setText(djelatnik.getPrezimeDjelatnika());
         holder.tvOIBDjelatnika.setText(djelatnik.getOIB());
@@ -39,13 +41,24 @@ public class PrikazDjelatnikaAdapter extends RecyclerView.Adapter<PrikazDjelatni
         return mDjelatnici.size();
     }
 
-    public static class PrikazDjelatnikaViewHolder extends RecyclerView.ViewHolder{
+    public void setDjelatnici(List<Djelatnik> djelatnici){
+        mDjelatnici.clear();
+        mDjelatnici.addAll(djelatnici);
+        notifyDataSetChanged();
+    }
+
+    public void setClickListeer(ClickListener clickListeer){
+        this.clickListener = clickListeer;
+    }
+
+    public class PrikazDjelatnikaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public TextView tvIdDjelatnika;
         public TextView tvImeDjelatnika;
         public TextView tvPrezimeDjelatnika;
         public TextView tvOIBDjelatnika;
         public TextView tvUsernameDjelatnika;
+        public ImageView ivMeni;
 
         public PrikazDjelatnikaViewHolder (View itemView){
             super(itemView);
@@ -54,6 +67,18 @@ public class PrikazDjelatnikaAdapter extends RecyclerView.Adapter<PrikazDjelatni
             this.tvPrezimeDjelatnika = (TextView) itemView.findViewById(R.id.tvPrezimeDjelatnika);
             this.tvOIBDjelatnika = (TextView) itemView.findViewById(R.id.tvOIBDjelatnika);
             this.tvUsernameDjelatnika = (TextView) itemView.findViewById(R.id.tvUsernameDjelatnika);
+            this.ivMeni = (ImageView) itemView.findViewById(R.id.ivMeni);
+            this.ivMeni.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null)
+                clickListener.onClick(view, mDjelatnici.get(getAdapterPosition()));
+        }
+    }
+
+    interface ClickListener {
+        void onClick(View v, Djelatnik djelatnik);
     }
 }

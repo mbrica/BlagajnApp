@@ -46,6 +46,17 @@ public class Djelatnik {
     }
 
     @Ignore
+    public Djelatnik(String mUsernme, String mPassword, String mImeDjelatnika, String mPrezimeDjelatnika, String mOIB, int mVrstaDjelatnika){
+        this.mDjelatnikId = mDjelatnikId;
+        this.mUsernme = mUsernme;
+        this.mPassword = mPassword;
+        this.mImeDjelatnika = mImeDjelatnika;
+        this.mPrezimeDjelatnika = mPrezimeDjelatnika;
+        this.mOIB = mOIB;
+        this.mVrstaDjelatnika = mVrstaDjelatnika;
+    }
+
+    @Ignore
     public Djelatnik(String mUsernme, String mPassword, int mVrstaDjelatnika){
         this.mUsernme = mUsernme;
         this.mPassword = mPassword;

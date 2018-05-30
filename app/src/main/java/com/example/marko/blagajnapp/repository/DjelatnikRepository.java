@@ -35,6 +35,10 @@ public class DjelatnikRepository {
         return mDatabase.djelatnikDao().getDjelatnik(username,password);
     }
 
+    public LiveData<Djelatnik> getDjelatnikByID(int djelatnikId){
+        return mDatabase.djelatnikDao().getDjelatnikByID(djelatnikId);
+    }
+
     public void insertDjelatnik(Djelatnik djelatnik){
         new insertDjelatnikAsyncTask(mDatabase.djelatnikDao()).execute(djelatnik);
     }
