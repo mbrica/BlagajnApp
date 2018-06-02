@@ -7,28 +7,32 @@
     <TextView
         android:id="@+id/tvIdArtikla"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5"/>
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tvNazivArtikla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvIdArtikla"
-        android:text="Kava" />
+        android:layout_below="@+id/tvIdArtikla" />
 
     <TextView
         android:id="@+id/tvCijenaArtikla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvNazivArtikla"
-        android:text="7,00" />
+        android:layout_below="@+id/tvNazivArtikla" />
 
     <TextView
         android:id="@+id/tvKategorijaArtikla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvCijenaArtikla"
-        android:text="Topli napitci"/>
+        android:layout_below="@+id/tvCijenaArtikla" />
+
+    <ImageView
+        android:id="@+id/ivMeni"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more_vert_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="8dp"/>
 
 </RelativeLayout>

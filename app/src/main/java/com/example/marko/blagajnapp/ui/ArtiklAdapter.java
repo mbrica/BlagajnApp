@@ -30,7 +30,7 @@ public class ArtiklAdapter extends RecyclerView.Adapter<ArtiklAdapter.ArtiklView
     public void onBindViewHolder(ArtiklViewHolder holder, int position) {
         if (mArtikl != null){
             Artikl odabrani = mArtikl.get(position);
-            holder.btnArtiklNaziv.setText(odabrani.getNazivArtikla());
+            holder.btnArtiklNaziv.setText(odabrani.getMNaziv());
         } else {
             holder.btnArtiklNaziv.setText("Nema artikala u ovoj kategoriji!");
         }

@@ -3,6 +3,7 @@ package com.example.marko.blagajnapp.model;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(foreignKeys = @ForeignKey(entity = Kategorija.class, parentColumns = "kategorijaId",childColumns = "Kategorija"))
@@ -10,47 +11,57 @@ public class Artikl {
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "artiklId")
-    public int martiklId;
+    private int martiklId;
 
     @ColumnInfo(name = "nazivArtikla")
-    public String mNaziv;
+    private String mNaziv;
 
     @ColumnInfo(name = "cijenaArtikla")
-    public float mCijena;
+    private float mCijena;
 
     @ColumnInfo(name = "Kategorija")
     private int mKategorija;
 
-    public Artikl(){}
+    @ColumnInfo(name = "KategorijaNaziv")
+    private String mKategorijaNaziv;
 
-    public Artikl(int artiklId, String nazivArtikla, float cijenaArtikla, int Kategorija){
-        martiklId = artiklId;
-        mNaziv = nazivArtikla;
-        mCijena = cijenaArtikla;
-        mKategorija = Kategorija;
+    public Artikl(int martiklId, String mNaziv, float mCijena, int mKategorija, String mKategorijaNaziv){
+        this.martiklId = martiklId;
+        this.mNaziv = mNaziv;
+        this.mCijena = mCijena;
+        this.mKategorija = mKategorija;
+        this.mKategorijaNaziv = mKategorijaNaziv;
     }
 
-    public int getArtiklId() {
+    @Ignore
+    public Artikl(String mNaziv, float mCijena, int mKategorija, String mKategorijaNaziv){
+        this.mNaziv = mNaziv;
+        this.mCijena = mCijena;
+        this.mKategorija = mKategorija;
+        this.mKategorijaNaziv = mKategorijaNaziv;
+    }
+
+    public int getMartiklId () {
         return martiklId;
     }
 
-    public void setArtiklId(int artiklId) {
+    public void setMartiklId(int artiklId) {
         martiklId = artiklId;
     }
 
-    public String getNazivArtikla() {
+    public String getMNaziv() {
         return mNaziv;
     }
 
-    public void setNazivArtikla(String nazivArtikla) {
+    public void setMNaziv(String nazivArtikla) {
         mNaziv = nazivArtikla;
     }
 
-    public float getCijenaArtikla() {
+    public float getMCijena() {
         return mCijena;
     }
 
-    public void setCijenaArtikla(float cijenaArtikla) {
+    public void setMCijena(float cijenaArtikla) {
         mCijena = cijenaArtikla;
     }
 
@@ -60,6 +71,14 @@ public class Artikl {
 
     public void setKategorija(int Kategorija) {
         mKategorija = Kategorija;
+    }
+
+    public String getMKategorijaNaziv() {
+        return mKategorijaNaziv;
+    }
+
+    public void setMkategorijaNaziv (String mKategorijaNaziv){
+        this.mKategorijaNaziv = mKategorijaNaziv;
     }
 
     @Override

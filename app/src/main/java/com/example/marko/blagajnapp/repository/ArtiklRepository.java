@@ -15,11 +15,9 @@ public class ArtiklRepository {
     public static ArtiklRepository INSTANCE;
 
     private BlagajnAppDatabase mDatabase;
-    private LiveData<List<Artikl>> mData;
 
     private ArtiklRepository(Application application){
         mDatabase = BlagajnAppDatabase.getInstance(application);
-        //mData = mDatabase.artiklDao().getArtikliIzKategorije();
     }
 
     public static ArtiklRepository getINSTANCE(){
@@ -29,8 +27,16 @@ public class ArtiklRepository {
         return INSTANCE;
     }
 
-    public LiveData<List<Artikl>> getArtikliIzKategorije() {
-        return mData;
+    public LiveData<List<Artikl>> getArtikliIzKategorije(int kategorijaID) {
+        return mDatabase.artiklDao().getArtikliIzKategorije(kategorijaID);
+    }
+
+    public LiveData<List<Artikl>> getArtili(){
+        return mDatabase.artiklDao().getArtikli();
+    }
+
+    public LiveData<Artikl> getArtiklByID(int artiklId){
+        return mDatabase.artiklDao().getArtiklByID(artiklId);
     }
 
     public void insertArtikl(Artikl artikl){

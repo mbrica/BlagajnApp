@@ -25,4 +25,10 @@ public interface ArtiklDao {
 
     @Query("SELECT * FROM Artikl WHERE Kategorija = :Kategorija ORDER BY artiklId ASC;")
     LiveData<List<Artikl>> getArtikliIzKategorije(int Kategorija);
+
+    @Query("SELECT * FROM Artikl ORDER BY artiklId ASC;")
+    LiveData<List<Artikl>> getArtikli();
+
+    @Query("SELECT * FROM Artikl WHERE artiklId = :artiklId")
+    LiveData<Artikl> getArtiklByID(int artiklId);
 }

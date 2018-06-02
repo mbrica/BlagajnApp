@@ -16,8 +16,16 @@ public class ArtiklViewModel extends ViewModel {
         mArtiklRepository = ArtiklRepository.getINSTANCE();
     }
 
-    public LiveData<List<Artikl>> getArtikliIzKategorije(){
-        return mArtiklRepository.getArtikliIzKategorije();
+    public LiveData<List<Artikl>> getArtikliIzKategorije(int kategorijaID){
+        return mArtiklRepository.getArtikliIzKategorije(kategorijaID);
+    }
+
+    public LiveData<List<Artikl>> getArtikli(){
+        return mArtiklRepository.getArtili();
+    }
+
+    public LiveData<Artikl> getArtiklByID(int artiklID){
+        return mArtiklRepository.getArtiklByID(artiklID);
     }
 
     public void insertArtikl(Artikl artikl){
