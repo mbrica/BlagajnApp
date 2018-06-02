@@ -1,4 +1,4 @@
-package com.example.marko.blagajnapp.ui;
+package com.example.marko.blagajnapp.ui.admin_artikli;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,8 +15,8 @@ import android.widget.TextView;
 
 import com.example.marko.blagajnapp.R;
 import com.example.marko.blagajnapp.model.Artikl;
-import com.example.marko.blagajnapp.ui.NoviArtiklActivity;
-import com.example.marko.blagajnapp.ui.PrikazArtiklaAdapter;
+import com.example.marko.blagajnapp.ui.admin_artikli.NoviArtiklActivity;
+import com.example.marko.blagajnapp.ui.admin_artikli.PrikazArtiklaAdapter;
 
 import java.util.ArrayList;
 

@@ -1,9 +1,7 @@
 package com.example.marko.blagajnapp.viewmodel;
 
-
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
-
 import com.example.marko.blagajnapp.repository.KategorijaRepository;
 import com.example.marko.blagajnapp.model.Kategorija;
 
@@ -22,6 +20,10 @@ public class KategorijaViewModel extends ViewModel {
 
     public LiveData<List<Kategorija>> getAllKategorije(){
         return mKategorijaRepository.getAllKategorije();
+    }
+
+    public LiveData<Kategorija> getKategorijaByID(int kategorijaId){
+        return mKategorijaRepository.getKategorijaByID(kategorijaId);
     }
 
     public void insertKategorija(Kategorija kategorija){

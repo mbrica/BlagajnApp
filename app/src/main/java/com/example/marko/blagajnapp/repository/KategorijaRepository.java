@@ -3,7 +3,6 @@ package com.example.marko.blagajnapp.repository;
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
-
 import com.example.marko.blagajnapp.BlagajnApp;
 import com.example.marko.blagajnapp.model.Kategorija;
 import com.example.marko.blagajnapp.room.BlagajnAppDatabase;
@@ -16,11 +15,9 @@ public class KategorijaRepository {
     private static KategorijaRepository INSTANCE;
 
     private BlagajnAppDatabase mDatabase;
-    private LiveData<List<Kategorija>> mData;
 
     private KategorijaRepository(Application application){
         mDatabase = BlagajnAppDatabase.getInstance(application);
-        mData = mDatabase.kategorijaDao().getAllKategorije();
     }
 
     public static KategorijaRepository getINSTANCE(){
@@ -31,7 +28,11 @@ public class KategorijaRepository {
     }
 
     public LiveData<List<Kategorija>> getAllKategorije(){
-        return mData;
+        return mDatabase.kategorijaDao().getAllKategorije();
+    }
+
+    public LiveData<Kategorija> getKategorijaByID(int kategorijaId){
+        return mDatabase.kategorijaDao().getKategorijaByID(kategorijaId);
     }
 
     //Dodavaje kategroije u bazu
@@ -98,6 +99,4 @@ public class KategorijaRepository {
             return null;
         }
     }
-
-
 }

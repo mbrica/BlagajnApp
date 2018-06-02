@@ -32,10 +32,10 @@
         <activity android:name=".ui.djelatnici.NoviDjelatnikActivity"
                   android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.NovaKategorijaActivity"
+        <activity android:name=".ui.admin_kategorije.NovaKategorijaActivity"
                   android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.NoviArtiklActivity"
+        <activity android:name=".ui.admin_artikli.NoviArtiklActivity"
                   android:screenOrientation="portrait" />
 
     </application>

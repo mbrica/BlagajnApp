@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.example.marko.blagajnapp.R;
 import com.example.marko.blagajnapp.room.BlagajnAppDatabase;
+import com.example.marko.blagajnapp.ui.admin_artikli.TabArtikli;
+import com.example.marko.blagajnapp.ui.admin_kategorije.TabKategorije;
 import com.example.marko.blagajnapp.ui.djelatnici.TabDjelatnici;
 
 public class AdminActivity extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.marko.blagajnapp.ui;
+package com.example.marko.blagajnapp.ui.admin_artikli;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,34 +9,39 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.marko.blagajnapp.R;
 
-public class NovaKategorijaActivity extends AppCompatActivity implements View.OnClickListener {
+public class NoviArtiklActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Toolbar toolbar;
-    private EditText etNazvKategorije;
-    private Button btnDodajKategoriju;
+    private EditText etNazivArtikla;
+    private EditText etCijenaArtikla;
+    private Spinner spinKategorija;
+    private Button btnDodajArtikl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nova_kategorija_activity);
+        setContentView(R.layout.novi_artikl_activity);
         setUpUI();
     }
 
     private void setUpUI(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        this.etNazvKategorije = (EditText) findViewById(R.id.etNazivKategorije);
-        this.btnDodajKategoriju = (Button) findViewById(R.id.btnDodajKategoriju);
-        this.btnDodajKategoriju.setOnClickListener(this);
+        this.etNazivArtikla = (EditText) findViewById(R.id.etNazivArtikla);
+        this.etCijenaArtikla = (EditText) findViewById(R.id.etCijenaArtikla);
+        this.spinKategorija = (Spinner) findViewById(R.id.spinKategorija);
+        this.btnDodajArtikl = (Button) findViewById(R.id.btnDodajArtikl);
+        this.btnDodajArtikl.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        //spremanje kategorije u bazu podataka
+        //funkcija za spremanje artikla u bazu
     }
 
     //sljedeće dvije metode su potrebne za prikaz i funkcioniranje menua

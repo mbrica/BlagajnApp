@@ -2,6 +2,7 @@ package com.example.marko.blagajnapp.model;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
@@ -16,8 +17,14 @@ public class Kategorija {
 
     public Kategorija (){}
 
-    public Kategorija ( String nazivKategorije){
-        mNazivKategorije = nazivKategorije;
+    public Kategorija (int mkategorijaId, String nazivKategorije){
+        this.mkategorijaId = mkategorijaId;
+        this.mNazivKategorije = nazivKategorije;
+    }
+
+    @Ignore
+    public Kategorija (String mNazivKategorije){
+        this.mNazivKategorije = mNazivKategorije;
     }
 
 
