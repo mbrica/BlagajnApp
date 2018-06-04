@@ -18,4 +18,6 @@ public interface RacunDao {
     @Query("SELECT * FROM Racun ORDER BY racunId ASC")
     LiveData<List<Racun>> getAllRacuni();
 
+    //dodati query za ispis računa u adminu
+
 }

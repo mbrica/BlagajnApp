@@ -3,6 +3,7 @@ package com.example.marko.blagajnapp.model;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.example.marko.blagajnapp.model.Djelatnik;
@@ -15,21 +16,28 @@ public class Racun {
     private int mRacunId;
 
     @ColumnInfo(name = "vrijemeIzdavanja")
-    private String mVrijemeIzdavanja;  //potreban convert type
+    private String mVrijemeIzdavanja;
 
     @ColumnInfo(name = "iznosRacuna")
-    private int mIznosRacuna;
+    private String mIznosRacuna;
 
     @ColumnInfo(name = "djelatnik")
-    private String mDjelatnik;
+    private int mDjelatnik;
 
     public Racun(){}
 
-    public Racun(int racunId, String vrijemeIzdavanja, int iznosRacuna, String djelatnik){
-        mRacunId = racunId;
-        mVrijemeIzdavanja = vrijemeIzdavanja;
-        mIznosRacuna = iznosRacuna;
-        mDjelatnik = djelatnik;
+    public Racun (int mRacunId, String mVrijemeIzdavanja, String mIznosRacuna, int mDjelatnik){
+        this.mRacunId = mRacunId;
+        this.mVrijemeIzdavanja = mVrijemeIzdavanja;
+        this.mIznosRacuna = mIznosRacuna;
+        this.mDjelatnik = mDjelatnik;
+    }
+
+    @Ignore
+    public Racun(String mVrijemeIzdavanja, String mIznosRacuna, int mDjelatnik){
+        this.mVrijemeIzdavanja = mVrijemeIzdavanja;
+        this.mIznosRacuna = mIznosRacuna;
+        this.mDjelatnik = mDjelatnik;
     }
 
     public int getRacunId(){
@@ -48,19 +56,19 @@ public class Racun {
         mVrijemeIzdavanja = vrijemeIzdavanja;
     }
 
-    public int getIznosRacuna(){
+    public String getIznosRacuna(){
         return mIznosRacuna;
     }
 
-    public void setIznosRacuna(int iznosRacuna){
+    public void setIznosRacuna(String iznosRacuna){
         mIznosRacuna = iznosRacuna;
     }
 
-    public String getDjelatnik(){
+    public int getDjelatnik(){
         return mDjelatnik;
     }
 
-    public void setDjelatnik(String djelatnik){
+    public void setDjelatnik(int djelatnik){
         mDjelatnik = djelatnik;
     }
 

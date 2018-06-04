@@ -1,4 +1,4 @@
-package com.example.marko.blagajnapp.ui.djelatnici;
+package com.example.marko.blagajnapp.ui.admin_djelatnici;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -20,8 +20,6 @@ import android.widget.TextView;
 
 import com.example.marko.blagajnapp.R;
 import com.example.marko.blagajnapp.model.Djelatnik;
-import com.example.marko.blagajnapp.ui.djelatnici.NoviDjelatnikActivity;
-import com.example.marko.blagajnapp.ui.djelatnici.PrikazDjelatnikaAdapter;
 import com.example.marko.blagajnapp.viewmodel.DjelatnikViewModel;
 
 import java.util.ArrayList;

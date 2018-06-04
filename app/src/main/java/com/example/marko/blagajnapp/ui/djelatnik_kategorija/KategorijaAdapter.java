@@ -1,4 +1,4 @@
-package com.example.marko.blagajnapp.ui;
+package com.example.marko.blagajnapp.ui.djelatnik_kategorija;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,10 +15,10 @@ import java.util.List;
 public class KategorijaAdapter extends RecyclerView.Adapter<KategorijaAdapter.KategorijaViewHolder> {
 
     private List<Kategorija> mKategorija;
+    private ClickListener clickListener;
 
     public KategorijaAdapter(List<Kategorija> kategorije) {
         mKategorija = new ArrayList<>();
-        this.refreshData(kategorije);
     }
 
     @Override
@@ -48,7 +48,11 @@ public class KategorijaAdapter extends RecyclerView.Adapter<KategorijaAdapter.Ka
         this.notifyDataSetChanged();
     }
 
-    public static class KategorijaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public void setClickListener(ClickListener clickListener){
+        this.clickListener = clickListener;
+    }
+
+    public class KategorijaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public Button btnKategorijaNaziv;
 
@@ -61,7 +65,13 @@ public class KategorijaAdapter extends RecyclerView.Adapter<KategorijaAdapter.Ka
 
         @Override
         public void onClick(View v) {
-            //pozvati metodu koja ispiše artikle u fragmentu 2 iz odabrane kategorije
+            if (clickListener != null){
+                clickListener.onClick(mKategorija.get(getAdapterPosition()));
+            }
         }
+    }
+
+    interface ClickListener {
+        void onClick(Kategorija kategorija);
     }
 }

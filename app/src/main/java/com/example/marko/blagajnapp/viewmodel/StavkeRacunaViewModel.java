@@ -20,7 +20,7 @@ public class StavkeRacunaViewModel extends ViewModel {
         return mStavkeRacunaRepository.getAllStavkeRacuna();
     }
 
-    public void insertStavkeRacuna(StavkeRacuna stavkeRacuna){
+    public void insertStavkeRacuna(List<StavkeRacuna> stavkeRacuna){
         mStavkeRacunaRepository.insertStavkeRacuna(stavkeRacuna);
     }
 }

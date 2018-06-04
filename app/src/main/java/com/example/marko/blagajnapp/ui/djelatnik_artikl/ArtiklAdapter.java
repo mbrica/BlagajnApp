@@ -1,4 +1,4 @@
-package com.example.marko.blagajnapp.ui;
+package com.example.marko.blagajnapp.ui.djelatnik_artikl;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +13,10 @@ import java.util.List;
 public class ArtiklAdapter extends RecyclerView.Adapter<ArtiklAdapter.ArtiklViewHolder> {
 
     private List<Artikl> mArtikl;
+    private ClickListener clickListener;
 
     public ArtiklAdapter(List<Artikl> artikli){
         mArtikl = artikli;
-        this.refreshData(artikli);
     }
 
     @Override
@@ -49,7 +49,11 @@ public class ArtiklAdapter extends RecyclerView.Adapter<ArtiklAdapter.ArtiklView
         this.notifyDataSetChanged();
     }
 
-    public static class ArtiklViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public void setClickListener(ClickListener clickListener){
+        this.clickListener = clickListener;
+    }
+
+    public class ArtiklViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         public Button btnArtiklNaziv;
 
@@ -62,7 +66,13 @@ public class ArtiklAdapter extends RecyclerView.Adapter<ArtiklAdapter.ArtiklView
 
         @Override
         public void onClick(View v) {
-            //pozvati metodu koja dodaje odabrani artikl na račun u fragmentu 3
+            if (clickListener != null){
+                clickListener.onClick(mArtikl.get(getAdapterPosition()));
+            }
         }
+    }
+
+    interface ClickListener{
+        void onClick(Artikl artikl);
     }
 }

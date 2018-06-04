@@ -1,4 +1,5 @@
 package com.example.marko.blagajnapp.ui;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,8 @@ import com.example.marko.blagajnapp.R;
 import com.example.marko.blagajnapp.room.BlagajnAppDatabase;
 import com.example.marko.blagajnapp.ui.admin_artikli.TabArtikli;
 import com.example.marko.blagajnapp.ui.admin_kategorije.TabKategorije;
-import com.example.marko.blagajnapp.ui.djelatnici.TabDjelatnici;
+import com.example.marko.blagajnapp.ui.admin_racuni.TabRacuni;
+import com.example.marko.blagajnapp.ui.admin_djelatnici.TabDjelatnici;
 
 public class AdminActivity extends AppCompatActivity {
 
@@ -49,7 +51,6 @@ public class AdminActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
     }
 
-    //sljedeće dvije metode su potrebne za prikaz i funkcioniranje menua
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -61,7 +62,9 @@ public class AdminActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menuItemLogout:
-                Toast.makeText(this,"Kliknuta odjava",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
                 return true;
         }
         return false;

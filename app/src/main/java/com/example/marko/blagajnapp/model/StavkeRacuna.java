@@ -3,6 +3,7 @@ package com.example.marko.blagajnapp.model;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity(foreignKeys = @ForeignKey(entity = Racun.class, parentColumns = "racunId", childColumns = "IdRacuna"))
@@ -14,9 +15,6 @@ public class StavkeRacuna {
 
     @ColumnInfo(name = "IdRacuna")
     private int mIdRacuna;
-
-    /*@ColumnInfo(name = "artikl")
-    private int mArtikl;*/
 
     @ColumnInfo(name = "NazivArtikla")
     private String mNazivArtikla;
@@ -32,14 +30,21 @@ public class StavkeRacuna {
 
     public StavkeRacuna(){}
 
-    public StavkeRacuna(int StavkeRacunaID, int IdRacuna, String NazivArtikla, int Kolicina, float CijenaArtikla, float Iznos){
-        mStavkaRacunaID = StavkeRacunaID;
-        mIdRacuna = IdRacuna;
-        //mArtikl = artikl;
-        mNazivArtikla = NazivArtikla;
-        mKolicina = Kolicina;
-        mCijenaArtikla = CijenaArtikla;
-        mIznos = Iznos;
+    public StavkeRacuna(int mStavkaRacunaID, int mIdRacuna, String mNazivArtikla, int mKolicina, float mCijenaArtikla, float mIznos){
+        this.mStavkaRacunaID = mStavkaRacunaID;
+        this.mIdRacuna = mIdRacuna;
+        this.mNazivArtikla = mNazivArtikla;
+        this.mKolicina = mKolicina;
+        this.mCijenaArtikla = mCijenaArtikla;
+        this.mIznos = mIznos;
+    }
+
+    @Ignore
+    public StavkeRacuna(String mNazivArtikla, int mKolicina, float mCijenaArtikla, float mIznos){
+        this.mNazivArtikla = mNazivArtikla;
+        this.mKolicina = mKolicina;
+        this.mCijenaArtikla = mCijenaArtikla;
+        this.mIznos = mIznos;
     }
 
     public int getStavkaRacunaID() {
@@ -57,14 +62,6 @@ public class StavkeRacuna {
     public void setIdRacuna(int IdRacuna) {
         this.mIdRacuna = IdRacuna;
     }
-
-    /*public int getArtikl() {
-        return mArtikl;
-    }
-
-    public void setArtikl(int Artikl) {
-        this.mArtikl = Artikl;
-    }*/
 
     public String getNazivArtikla() {
         return mNazivArtikla;

@@ -16,11 +16,9 @@ public class StavkeRacunaRepository {
     public static StavkeRacunaRepository INSTANCE;
 
     private BlagajnAppDatabase mDatabase;
-    private LiveData<List<StavkeRacuna>> mData;
 
     private StavkeRacunaRepository(Application application){
         mDatabase = BlagajnAppDatabase.getInstance(application);
-        //mData = mDatabase.stavkeRacunaDao().getAllStavkeRacuna();
     }
 
     public static StavkeRacunaRepository getINSTANCE(){
@@ -31,14 +29,14 @@ public class StavkeRacunaRepository {
     }
 
     public LiveData<List<StavkeRacuna>> getAllStavkeRacuna(){
-        return mData;
+        return mDatabase.stavkeRacunaDao().getAllStavkeRacuna();
     }
 
-    public void insertStavkeRacuna(StavkeRacuna stavkeRacuna){
+    public void insertStavkeRacuna(List<StavkeRacuna> stavkeRacuna){
         new insertStavkeRacunaAsyncTask(mDatabase.stavkeRacunaDao()).execute(stavkeRacuna);
     }
 
-    private class insertStavkeRacunaAsyncTask extends AsyncTask<StavkeRacuna, Void, Void>{
+    private class insertStavkeRacunaAsyncTask extends AsyncTask<List<StavkeRacuna>, Void, Void>{
 
         private StavkeRacunaDao mStavkeRacunaDao;
 
@@ -47,7 +45,7 @@ public class StavkeRacunaRepository {
         }
 
         @Override
-        protected Void doInBackground(StavkeRacuna... stavkeRacuna) {
+        protected Void doInBackground(List<StavkeRacuna>... stavkeRacuna) {
             mStavkeRacunaDao.insertStavkeRacuna(stavkeRacuna[0]);
             return null;
         }

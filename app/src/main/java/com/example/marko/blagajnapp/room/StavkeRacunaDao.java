@@ -14,6 +14,12 @@ public interface StavkeRacunaDao {
     @Insert
     void insertStavkeRacuna (StavkeRacuna stavkeRacuna);
 
+    @Insert
+    void insertStavkeRacuna (List<StavkeRacuna> stavkeRacuna);
+
+    @Query("SELECT * FROM StavkeRacuna ORDER BY StavkaRacunaID ASC;")
+    LiveData<List<StavkeRacuna>> getAllStavkeRacuna();
+
     @Query("SELECT * FROM StavkeRacuna WHERE IdRacuna = :IdRacuna ORDER BY StavkaRacunaID ASC")
     LiveData<List<StavkeRacuna>> getAllStavkeRacuna(int IdRacuna);
 }

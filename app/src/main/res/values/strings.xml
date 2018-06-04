@@ -6,7 +6,7 @@
     <string name="tvKolicinaText">Količina</string>
     <string name="tvCijenaText">Cijena</string>
     <string name="tvIznosText">Iznos</string>
-    <string name="tvUkupnoText">Ukupno</string>
+    <string name="tvUkupnoText">Ukupno:</string>
     <string name="etUsernameHint">Korisničko ime</string>
     <string name="PasswordHint">Lozinka</string>
     <string name="BtnLogin">Prijava</string>

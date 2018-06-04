@@ -29,7 +29,7 @@
                   android:screenOrientation="portrait" >
         </activity>
 
-        <activity android:name=".ui.djelatnici.NoviDjelatnikActivity"
+        <activity android:name=".ui.admin_djelatnici.NoviDjelatnikActivity"
                   android:screenOrientation="portrait" />
 
         <activity android:name=".ui.admin_kategorije.NovaKategorijaActivity"

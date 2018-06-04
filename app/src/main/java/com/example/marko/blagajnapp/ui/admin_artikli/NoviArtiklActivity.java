@@ -114,22 +114,4 @@ public class NoviArtiklActivity extends AppCompatActivity implements View.OnClic
             finish();
         }
     }
-
-    //sljedeće dvije metode su potrebne za prikaz i funkcioniranje menua
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.main_menu,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menuItemLogout:
-                Toast.makeText(this,"Kliknuta odjava",Toast.LENGTH_SHORT).show();
-                return true;
-        }
-        return false;
-    }
 }

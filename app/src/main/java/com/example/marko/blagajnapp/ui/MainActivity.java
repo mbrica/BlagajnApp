@@ -1,6 +1,7 @@
 package com.example.marko.blagajnapp.ui;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -8,16 +9,24 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
-
 import com.example.marko.blagajnapp.R;
+import com.example.marko.blagajnapp.model.Artikl;
+import com.example.marko.blagajnapp.model.Kategorija;
+import com.example.marko.blagajnapp.ui.djelatnik_artikl.ArtiklFragment;
+import com.example.marko.blagajnapp.ui.djelatnik_kategorija.KategorijaFragment;
+import com.example.marko.blagajnapp.ui.djelatnik_racun.RacunFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainInterface {
 
     private final String KATEGORIJA_FRAGMENT = "Kategorija";
     private final String ARTIKL_FRAGMENT = "Artikl";
     private final String RACUN_FRAGMENT = "Racun";
+    private final String DJELATNIK = "Djelatnik";
 
     private Toolbar toolbar;
+    private KategorijaFragment kategorijaFragment;
+    private ArtiklFragment artiklFragment;
+    private RacunFragment racunFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,15 +37,19 @@ public class MainActivity extends AppCompatActivity {
         this.setUpFragments();
     }
 
-
-
     //Postavljanje fragmenata na sučelje
     private void setUpFragments(){
-        FragmentManager fragmentManager = getFragmentManager();
+        kategorijaFragment = new KategorijaFragment();
+        kategorijaFragment.setMainInterface(this);
+        artiklFragment = new ArtiklFragment();
+        artiklFragment.setMainInterface(this);
+        racunFragment = new RacunFragment();
+        racunFragment.setDjelatnik(getIntent().getIntExtra(DJELATNIK, -1));
+        FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.flKategorije, new KategorijaFragment(),this.KATEGORIJA_FRAGMENT);
-        fragmentTransaction.add(R.id.flArtikli, new ArtiklFragment(), this.ARTIKL_FRAGMENT);
-        fragmentTransaction.add(R.id.flRacun, new RacunFragment(), this.RACUN_FRAGMENT);
+        fragmentTransaction.add(R.id.flKategorije, kategorijaFragment,this.KATEGORIJA_FRAGMENT);
+        fragmentTransaction.add(R.id.flArtikli, artiklFragment, this.ARTIKL_FRAGMENT);
+        fragmentTransaction.add(R.id.flRacun, racunFragment, this.RACUN_FRAGMENT);
         fragmentTransaction.commit();
     }
 
@@ -55,16 +68,21 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.menuItemLogout:
-                Toast.makeText(this,"Kliknuta odjava",Toast.LENGTH_SHORT).show();
-                this.logout();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
                 return true;
         }
         return false;
     }
 
+    @Override
+    public void prikaziArtikle(Kategorija kategorija) {
+        artiklFragment.prikaziArtikle(kategorija);
+    }
 
-    //na developers.android piše da mora biti public
-    public void logout(){
-        //implementirati logiku za odjavu usera
+    @Override
+    public void dodajNaRacun(Artikl artikl) {
+        racunFragment.dodajStavkuRacuna(artikl);
     }
 }

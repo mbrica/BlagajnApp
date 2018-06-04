@@ -1,4 +1,4 @@
-package com.example.marko.blagajnapp.ui;
+package com.example.marko.blagajnapp.ui.admin_racuni;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.example.marko.blagajnapp.R;
 import com.example.marko.blagajnapp.model.Racun;
-import com.example.marko.blagajnapp.ui.PrikazRacunaAdapter;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.marko.blagajnapp.ui.djelatnici;
+package com.example.marko.blagajnapp.ui.admin_djelatnici;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -88,23 +88,5 @@ public class NoviDjelatnikActivity extends AppCompatActivity implements View.OnC
             finish();
         }
 
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.main_menu,menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.menuItemLogout:
-                Toast.makeText(this,"Kliknuta odjava",Toast.LENGTH_SHORT).show();
-                return true;
-        }
-        return false;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.marko.blagajnapp.ui.djelatnici;
+package com.example.marko.blagajnapp.ui.admin_djelatnici;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
