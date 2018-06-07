@@ -17,7 +17,6 @@ public class Djelatnik {
     @ColumnInfo(name = "username")
     public String mUsernme;
 
-    //neka enkripcija za password
     @ColumnInfo(name = "password")
     private String mPassword;
 

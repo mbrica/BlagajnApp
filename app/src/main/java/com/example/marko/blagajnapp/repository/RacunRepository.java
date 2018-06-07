@@ -3,9 +3,9 @@ package com.example.marko.blagajnapp.repository;
 import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
-
 import com.example.marko.blagajnapp.BlagajnApp;
 import com.example.marko.blagajnapp.model.Racun;
+import com.example.marko.blagajnapp.model.RacunData;
 import com.example.marko.blagajnapp.room.BlagajnAppDatabase;
 import com.example.marko.blagajnapp.room.RacunDao;
 
@@ -16,11 +16,9 @@ public class RacunRepository {
     private static RacunRepository INSTANCE;
 
     private BlagajnAppDatabase mDatabase;
-    private LiveData<List<Racun>> mData;
 
     private RacunRepository(Application application){
         mDatabase = BlagajnAppDatabase.getInstance(application);
-        mData = mDatabase.racunDao().getAllRacuni();
     }
 
     public static RacunRepository getINSTANCE(){
@@ -31,7 +29,11 @@ public class RacunRepository {
     }
 
     public LiveData<List<Racun>> getAllRacuni() {
-        return mData;
+        return mDatabase.racunDao().getAllRacuni();
+    }
+
+    public LiveData<List<RacunData>> getAllRacuniIStavkeRacuna(){
+        return mDatabase.racunDao().getAllRacuniIStavkeRacuna();
     }
 
     public void insertRacun (Racun racun){

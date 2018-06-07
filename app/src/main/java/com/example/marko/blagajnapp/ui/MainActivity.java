@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
 import com.example.marko.blagajnapp.R;
 import com.example.marko.blagajnapp.model.Artikl;
 import com.example.marko.blagajnapp.model.Kategorija;
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements MainInterface {
     private final String KATEGORIJA_FRAGMENT = "Kategorija";
     private final String ARTIKL_FRAGMENT = "Artikl";
     private final String RACUN_FRAGMENT = "Racun";
-    private final String DJELATNIK = "Djelatnik";
+    public final static String DJELATNIK = "djelatnik";
 
     private Toolbar toolbar;
     private KategorijaFragment kategorijaFragment;
@@ -35,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements MainInterface {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         this.setUpFragments();
+
     }
 
     //Postavljanje fragmenata na sučelje
@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements MainInterface {
         fragmentTransaction.add(R.id.flRacun, racunFragment, this.RACUN_FRAGMENT);
         fragmentTransaction.commit();
     }
-
 
 
     //Metode za menu

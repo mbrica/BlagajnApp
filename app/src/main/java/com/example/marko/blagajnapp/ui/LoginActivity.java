@@ -1,6 +1,5 @@
 package com.example.marko.blagajnapp.ui;
 
-import android.app.Activity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.marko.blagajnapp.R;
 import com.example.marko.blagajnapp.model.Djelatnik;
 import com.example.marko.blagajnapp.viewmodel.DjelatnikViewModel;
@@ -22,7 +20,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     EditText etUsername;
     EditText etPassword;
     Button btnLogin;
-
     DjelatnikViewModel model;
 
     @Override
@@ -53,6 +50,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     finish();
                 } else if (djelatnik.getVrstaDjelatnika() == Djelatnik.djelatnik) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.putExtra(MainActivity.DJELATNIK, djelatnik.getDjelatnikId());
                     startActivity(intent);
                     finish();
                 }
