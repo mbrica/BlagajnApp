@@ -35,7 +35,8 @@ public class SpinnerAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        View row = LayoutInflater.from(viewGroup.getContext()).inflate(android.R.layout.simple_spinner_item,viewGroup,false);
+        View row = LayoutInflater.from(viewGroup.getContext()).inflate(android.R.layout.simple_spinner_dropdown_item,viewGroup,false);
+
         TextView textView = (TextView) row.findViewById(android.R.id.text1);
         textView.setText(mKategorija.get(position).getNazivKategorije());
         return row;

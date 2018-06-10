@@ -31,7 +31,7 @@ public class PrikazRacunaAdapter extends RecyclerView.Adapter<PrikazRacunaAdapte
         holder.tvVrijeme.setText(mRacun.get(position).getVrijemeIzdavanja());
         holder.tvDjelatnik.setText(mRacun.get(position).getImeDjelatnika());
         holder.tvStavke.setText(mRacun.get(position).getStavkeString());
-        holder.tvUkupno.setText("Ukupno: " + mRacun.get(position).getIznosRacuna());
+        holder.tvUkupno.setText("Ukupno: " + mRacun.get(position).getIznosRacuna() + "KN");
     }
 
     @Override
@@ -62,6 +62,5 @@ public class PrikazRacunaAdapter extends RecyclerView.Adapter<PrikazRacunaAdapte
             this.tvStavke = (TextView) itemView.findViewById(R.id.tvStavke);
             this.tvUkupno = (TextView) itemView.findViewById(R.id.tvUkupno);
         }
-
     }
 }

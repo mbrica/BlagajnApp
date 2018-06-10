@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements MainInterface {
     private final String ARTIKL_FRAGMENT = "Artikl";
     private final String RACUN_FRAGMENT = "Racun";
     public final static String DJELATNIK = "djelatnik";
+    public final static String IME_DJELATNIKA = "imeDjelatnika";
 
     private Toolbar toolbar;
     private KategorijaFragment kategorijaFragment;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements MainInterface {
         artiklFragment.setMainInterface(this);
         racunFragment = new RacunFragment();
         racunFragment.setDjelatnik(getIntent().getIntExtra(DJELATNIK, -1));
+        racunFragment.setImeDjelatnika(getIntent().getStringExtra(IME_DJELATNIKA));
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.flKategorije, kategorijaFragment,this.KATEGORIJA_FRAGMENT);

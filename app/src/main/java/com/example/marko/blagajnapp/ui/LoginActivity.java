@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 } else if (djelatnik.getVrstaDjelatnika() == Djelatnik.djelatnik) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     intent.putExtra(MainActivity.DJELATNIK, djelatnik.getDjelatnikId());
+                    intent.putExtra(MainActivity.IME_DJELATNIKA,djelatnik.getImeDjelatnika());
                     startActivity(intent);
                     finish();
                 }

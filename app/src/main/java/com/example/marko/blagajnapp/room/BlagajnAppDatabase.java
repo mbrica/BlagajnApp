@@ -37,7 +37,7 @@ public abstract class BlagajnAppDatabase extends RoomDatabase {
                     Executors.newSingleThreadExecutor().execute(new Runnable() {
                         @Override
                         public void run() {
-                            INSTANCE.djelatnikDao().insertDjelatnik(new Djelatnik("m","m",Djelatnik.admin));
+                            INSTANCE.djelatnikDao().insertDjelatnik(new Djelatnik("admin","admin1234",Djelatnik.admin));
                         }
                     });
                 }

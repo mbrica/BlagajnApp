@@ -7,16 +7,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.example.marko.blagajnapp.R;
 import com.example.marko.blagajnapp.model.Artikl;
 import com.example.marko.blagajnapp.model.Kategorija;
@@ -110,6 +106,7 @@ public class NoviArtiklActivity extends AppCompatActivity implements View.OnClic
             } else {
                 artiklModel.insertArtikl(new Artikl(etNazivArtikla.getText().toString(), Float.valueOf(etCijenaArtikla.getText().toString()),
                         odabranaKategroija.getMKategorijaId(),odabranaKategroija.getNazivKategorije()));
+                Toast.makeText(NoviArtiklActivity.this, "Artikl je uspješno dodan!",Toast.LENGTH_SHORT).show();
             }
             finish();
         }

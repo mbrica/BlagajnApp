@@ -66,6 +66,7 @@ public class NovaKategorijaActivity extends AppCompatActivity implements View.On
                 model.updateKategorija(kategorijaZaEdit);
             } else {
                 model.insertKategorija(new Kategorija(etNazvKategorije.getText().toString()));
+                Toast.makeText(NovaKategorijaActivity.this, "Kategorija je uspješno dodana!",Toast.LENGTH_SHORT).show();
             }
             finish();
         }
