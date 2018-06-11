@@ -24,6 +24,7 @@ import java.io.IOException;
 public class RacunDialog extends DialogFragment implements View.OnClickListener {
 
     private LinearLayout llRacun;
+    private String naslov;
     private String racunId;
     private String vrijeme;
     private String djelatnik;
@@ -68,12 +69,14 @@ public class RacunDialog extends DialogFragment implements View.OnClickListener 
 
     private void setUpUI(View dialogView){
 
+        TextView tvNaslov = (TextView) dialogView.findViewById(R.id.tvNaslov);
+        tvNaslov.setText("Račun");
         TextView tvRacun = (TextView) dialogView.findViewById(R.id.tvRacun);
-        tvRacun.setText(racunId);
+        tvRacun.setText("Broj računa: " + racunId);
         TextView tvVrijeme = (TextView) dialogView.findViewById(R.id.tvVrijeme);
-        tvVrijeme.setText(vrijeme);
+        tvVrijeme.setText("Vrijeme: " + vrijeme);
         TextView tvDjelatnik = (TextView) dialogView.findViewById(R.id.tvDjelatnik);
-        tvDjelatnik.setText(djelatnik);
+        tvDjelatnik.setText("Djelatnik: " + djelatnik);
         TextView tvStavke = (TextView) dialogView.findViewById(R.id.tvStavke);
         tvStavke.setText(stavkeRacuna);
         TextView tvUkupno = (TextView) dialogView.findViewById(R.id.tvUkupno);

@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:inputType="text"
         android:layout_marginTop="30dp"
+        android:layout_margin="5dp"
         android:layout_below="@+id/toolbar"
         android:hint="Naziv artikla" />
     <EditText
@@ -20,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
+        android:layout_margin="5dp"
         android:layout_below="@+id/etNazivArtikla"
         android:hint="Cijena artikla" />
 
@@ -27,6 +29,7 @@
         android:id="@+id/spinKategorija"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:layout_below="@+id/etCijenaArtikla">
     </Spinner>
 
@@ -34,7 +37,10 @@
         android:id="@+id/btnDodajArtikl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:layout_below="@+id/spinKategorija"
-        android:text="Dodaj artikl"/>
+        android:text="Dodaj artikl"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_button"/>
 
 </RelativeLayout>

@@ -13,14 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.9"
-        android:background="#C0C0C0">
+        android:background="@color/bgKategorijeFragment">
     </FrameLayout>
     <FrameLayout
         android:id="@+id/flArtikli"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.5"
-        android:background="#C0A0AF">
+        android:background="@color/bgArtikliFragment">
     </FrameLayout>
     <FrameLayout
         android:id="@+id/flRacun"

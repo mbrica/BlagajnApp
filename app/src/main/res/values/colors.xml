@@ -3,7 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="bgKategorijeFragment">#B0C4DE</color>
-    <color name="bgArtikliFragment">#A9A9A9</color>
+    <color name="bgToolbar">#C5D5EA</color>
+    <color name="bgKategorijeFragment">#6699CC</color>
+    <color name="bgArtikliFragment">#C5D5EA</color>
     <color name="bgRacunFragment">#FFFFFF</color>
+    <color name="bgKategorijaItem">#376996</color>
+    <color name="bgArtiklItem">#6699EA</color>
+    <color name="bgFABcolor">#376996</color>
 </resources>

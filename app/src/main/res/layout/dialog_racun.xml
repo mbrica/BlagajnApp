@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp">
+
+    <TextView
+        android:id="@+id/tvNaslov"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        tools:text="Neki naslov"/>
 
     <include layout="@layout/item_prikaz_racuna"/>
 
@@ -18,7 +29,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/RacunDialogOdustani"
-            android:gravity="center"/>
+            android:textSize="20dp"
+            android:textColor="#FF0000"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/tvUredu"
@@ -26,7 +39,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/RacunDialogUredu"
-            android:gravity="center"/>
+            android:textSize="20dp"
+            android:textColor="#47D147"
+            android:gravity="center" />
 
     </LinearLayout>
 

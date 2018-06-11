@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:layout_marginTop="30dp"
+        android:layout_margin="5dp"
         android:layout_below="@+id/toolbar"
         android:hint="Naziv kategorije" />
 
@@ -21,6 +21,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/etNazivKategorije"
-        android:text="Dodaj kategoriju"/>
+        android:layout_margin="5dp"
+        android:text="Dodaj kategoriju"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/rounded_button"/>
 
 </RelativeLayout>

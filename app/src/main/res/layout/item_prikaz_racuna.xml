@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp">
 
     <TextView
         android:id="@+id/tvRacun"
@@ -26,7 +30,7 @@
         tools:text="djelatnik"/>
 
     <ImageView
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="5dp"
         android:src="@drawable/dashed_line"
         android:layerType="software"/>
@@ -38,7 +42,7 @@
         tools:text="stavke"/>
 
     <ImageView
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="5dp"
         android:src="@drawable/dashed_line"
         android:layerType="software"/>
@@ -47,6 +51,6 @@
         android:id="@+id/tvUkupno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="ukupno"/>
+        tools:text="Ukupno:"/>
 
 </LinearLayout>

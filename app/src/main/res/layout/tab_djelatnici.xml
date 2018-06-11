@@ -20,8 +20,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="18dp"
-        android:layout_margin="16dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="35dp"
+        app:backgroundTint="@color/bgFABcolor"
         android:src="@drawable/ic_add_black_24dp"/>
 </RelativeLayout>
 

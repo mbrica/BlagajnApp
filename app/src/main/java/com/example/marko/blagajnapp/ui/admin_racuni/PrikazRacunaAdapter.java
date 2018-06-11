@@ -27,9 +27,9 @@ public class PrikazRacunaAdapter extends RecyclerView.Adapter<PrikazRacunaAdapte
 
     @Override
     public void onBindViewHolder(PrikazRacunaViewHolder holder, int position) {
-        holder.tvRacun.setText(String.valueOf(mRacun.get(position).getRacunId()));
-        holder.tvVrijeme.setText(mRacun.get(position).getVrijemeIzdavanja());
-        holder.tvDjelatnik.setText(mRacun.get(position).getImeDjelatnika());
+        holder.tvRacun.setText("Br. Računa: " + String.valueOf(mRacun.get(position).getRacunId()));
+        holder.tvVrijeme.setText("Vrijeme: " + mRacun.get(position).getVrijemeIzdavanja());
+        holder.tvDjelatnik.setText("Djelatnik:" + mRacun.get(position).getImeDjelatnika());
         holder.tvStavke.setText(mRacun.get(position).getStavkeString());
         holder.tvUkupno.setText("Ukupno: " + mRacun.get(position).getIznosRacuna() + "KN");
     }
