@@ -137,6 +137,8 @@ public class RacunDialog extends DialogFragment implements View.OnClickListener 
 
         llRacun.draw(page.getCanvas());
 
+
+
         document.finishPage(page);
 
         document.writeTo(outputStream);

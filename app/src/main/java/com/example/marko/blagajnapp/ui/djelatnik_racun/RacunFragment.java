@@ -179,5 +179,7 @@ public class RacunFragment extends Fragment implements RacunAdapter.ClickListene
     public void onOkClick() {
         Racun noviRacun = new Racun(simpleDateFormat.format(new Date(System.currentTimeMillis())), tvUkupnoCijena.getText().toString(), djelatnik);
         racunModel.insertRacun(noviRacun);
+
+        
     }
 }

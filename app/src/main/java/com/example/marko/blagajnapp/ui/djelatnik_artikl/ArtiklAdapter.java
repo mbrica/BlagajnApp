@@ -41,9 +41,7 @@ public class ArtiklAdapter extends RecyclerView.Adapter<ArtiklAdapter.ArtiklView
         return mArtikl.size();
     }
 
-    //refreshData bi trebala refreshirati artikle na osnovu kojoj kategoriji pripada
     public void refreshData(List<Artikl> artikli){
-        //kod sa primjera
         mArtikl.clear();
         mArtikl.addAll(artikli);
         this.notifyDataSetChanged();
