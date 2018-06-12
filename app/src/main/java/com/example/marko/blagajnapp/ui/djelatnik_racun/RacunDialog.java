@@ -12,6 +12,7 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +24,7 @@ import java.io.IOException;
 
 public class RacunDialog extends DialogFragment implements View.OnClickListener {
 
-    private LinearLayout llRacun;
+    private RelativeLayout rlRacun;
     private String naslov;
     private String racunId;
     private String vrijeme;
@@ -74,7 +75,7 @@ public class RacunDialog extends DialogFragment implements View.OnClickListener 
         TextView tvRacun = (TextView) dialogView.findViewById(R.id.tvRacun);
         tvRacun.setText("Broj računa: " + racunId);
         TextView tvVrijeme = (TextView) dialogView.findViewById(R.id.tvVrijeme);
-        tvVrijeme.setText("Vrijeme: " + vrijeme);
+        tvVrijeme.setText("Vrijeme: " + "\n"+  vrijeme);
         TextView tvDjelatnik = (TextView) dialogView.findViewById(R.id.tvDjelatnik);
         tvDjelatnik.setText("Djelatnik: " + djelatnik);
         TextView tvStavke = (TextView) dialogView.findViewById(R.id.tvStavke);
@@ -87,7 +88,7 @@ public class RacunDialog extends DialogFragment implements View.OnClickListener 
         TextView tvOdustani = (TextView) dialogView.findViewById(R.id.tvOdustani);
         tvOdustani.setOnClickListener(this);
 
-        llRacun = (LinearLayout) dialogView.findViewById(R.id.llRacun);
+        rlRacun = (RelativeLayout) dialogView.findViewById(R.id.rlRacun);
     }
 
     @Override
@@ -101,7 +102,7 @@ public class RacunDialog extends DialogFragment implements View.OnClickListener 
 
     public void printPDF(){
         if (isExternalStorageWritable()){
-            String filename = String.valueOf(System.currentTimeMillis() + ".pdf");
+            String filename = String.valueOf(racunId + ".pdf");
             File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
             if (!dir.exists()){
                 dir.mkdirs();
@@ -135,7 +136,7 @@ public class RacunDialog extends DialogFragment implements View.OnClickListener 
 
         PdfDocument.Page page = document.startPage(1);
 
-        llRacun.draw(page.getCanvas());
+        rlRacun.draw(page.getCanvas());
 
 
 
