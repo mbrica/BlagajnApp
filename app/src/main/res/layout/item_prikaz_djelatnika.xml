@@ -19,42 +19,47 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvIdDjelatnika"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvIdDjelatnika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"/>
 
-    <TextView
-        android:id="@+id/tvImeDjelatnika"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvIdDjelatnika" />
+            <TextView
+                android:id="@+id/tvImeDjelatnika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvIdDjelatnika"
+                android:textColor="#000000"/>
 
-    <TextView
-        android:id="@+id/tvPrezimeDjelatnika"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvImeDjelatnika"/>
+            <TextView
+                android:id="@+id/tvPrezimeDjelatnika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvImeDjelatnika"
+                android:textColor="#000000"/>
 
-    <TextView
-        android:id="@+id/tvOIBDjelatnika"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvPrezimeDjelatnika"/>
+            <TextView
+                android:id="@+id/tvOIBDjelatnika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvPrezimeDjelatnika"
+                android:textColor="#000000"/>
 
-    <TextView
-        android:id="@+id/tvUsernameDjelatnika"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvOIBDjelatnika" />
+            <TextView
+                android:id="@+id/tvUsernameDjelatnika"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvOIBDjelatnika"
+                android:textColor="#000000"/>
 
-    <ImageView
-        android:id="@+id/ivMeni"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_more_vert_black_24dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="8dp"/>
+            <ImageView
+                android:id="@+id/ivMeni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_more_vert_black_24dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="8dp"/>
 
         </RelativeLayout>
 

@@ -24,25 +24,29 @@
             <TextView
                 android:id="@+id/tvIdArtikla"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/tvNazivArtikla"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvIdArtikla" />
+                android:layout_below="@+id/tvIdArtikla"
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/tvCijenaArtikla"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvNazivArtikla" />
+                android:layout_below="@+id/tvNazivArtikla"
+                android:textColor="#000000" />
 
             <TextView
                 android:id="@+id/tvKategorijaArtikla"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvCijenaArtikla" />
+                android:layout_below="@+id/tvCijenaArtikla"
+                android:textColor="#000000"/>
 
             <ImageView
                 android:id="@+id/ivMeni"

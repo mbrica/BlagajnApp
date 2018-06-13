@@ -1,0 +1,12 @@
+
+Podaci za prijavu u aplikaciju kao administrator:
+
+Korisnièko ime: admin
+Lozinka: admin1234
+
+Nakon prijave dodati djelatnike, kategorije i artikle po želji. 
+
+Poslije obavljenog dodavanja djelatnika, kategroija i artikala, prijaviti se u aplikaciju sa podacima
+od djelatnika (korisnièko ime i lozinka) koji je prethodno kreiran, te je tada moguæe izdavati raèune. 
+
+Naziv .apk datoteke: app-release.apk

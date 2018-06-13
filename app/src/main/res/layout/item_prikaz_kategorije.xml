@@ -22,14 +22,14 @@
                 android:id="@+id/tvIdKategorije"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"/>
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/tvNazivKategorije"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvIdKategorije"
-                android:text="Topli napitci" />
+                android:textColor="#000000" />
 
             <ImageView
                 android:id="@+id/ivMeni"

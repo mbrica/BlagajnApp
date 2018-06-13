@@ -27,21 +27,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvNaslov"
-                tools:text="racunId"/>
+                tools:text="racunId"
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/tvVrijeme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvRacun"
-                tools:text="vrijeme"/>
+                tools:text="vrijeme"
+                android:textColor="#000000"/>
 
             <TextView
                 android:id="@+id/tvDjelatnik"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvVrijeme"
-                tools:text="djelatnik"/>
+                tools:text="djelatnik"
+                android:textColor="#000000"/>
 
             <ImageView
                 android:id="@+id/ivLine1"
@@ -56,7 +59,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ivLine1"
-                tools:text="stavke"/>
+                tools:text="stavke"
+                android:textColor="#000000"/>
 
             <ImageView
                 android:id="@+id/ivLine2"
@@ -71,7 +75,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ivLine2"
-                tools:text="Ukupno:"/>
+                tools:text="Ukupno:"
+                android:textColor="#000000"/>
 
         </RelativeLayout>
 
